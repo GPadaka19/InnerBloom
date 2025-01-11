@@ -1,18 +1,16 @@
 import streamlit as st
 from openai import OpenAI
-from dotenv import load_dotenv
 import os
 
-# Load .env file
-load_dotenv()
-
 # Get OpenAI API key from environment variables
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+
 if not openai_api_key:
-    st.error("OpenAI API key not found. Please ensure it's set in the .env file.")
+    st.error("OpenAI API key not found. Please ensure it's set in Streamlit secrets.")
 else:
-    # Create an OpenAI client.
+    # Use the key
     client = OpenAI(api_key=openai_api_key)
+    st.write("API Key loaded successfully!")
 
     # Show title and description.
     st.title("💬 Chatbot")
