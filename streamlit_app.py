@@ -14,7 +14,7 @@ else:
     # Show title and description.
     st.title("💬 Chatbot")
     st.write(
-        "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
+        "This is a simple chatbot that uses OpenAI's GPT-3.5-turbo model to generate responses. "
         "To use this app, the OpenAI API key is automatically loaded by the developer. "
     )
 
